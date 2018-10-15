@@ -1,0 +1,7 @@
+1.Redis支持多个数据库，并且每个数据库的数据是隔离的不能共享，并且基于单机才有，如果是集群就没有数据库的概念。
+Redis实例提供了多个用来存储数据的字典，客户端可以指定将数据存储在哪个字典中。客户端与Redis建立连接后会自动选择0号数据库，
+不过可以随时使用SELECT命令更换数据库，如要选择1号数据库:SELECT 1
+
+2.命令组有Cluster、Connection、Geo、Hashes、HyperLogLog、Keys、Lists、
+Pub/Sub、Scripting、Server、Sets、Sorted Sets、Strings、Transactions
+一共14个redis命令组两百多个redis命令
