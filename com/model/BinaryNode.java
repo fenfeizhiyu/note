@@ -5,7 +5,7 @@ package model;
  * @Author yu.yang
  * @Date 2018/10/15 10:02
  */
-public class BinaryNode<T> implements TreeNode {
+public class BinaryNode<T extends Comparable<T>> implements TreeNode {
 
     private T data;
 
