@@ -1,0 +1,4 @@
+1.Redis持久化机制 https://www.cnblogs.com/xingzc/p/5988080.html
+
+2.Skip List（跳跃表）原理详解与实现 http://dsqiu.iteye.com/blog/1705530
+  List（跳跃表）原理详解与实现 https://blog.csdn.net/lz710117239/article/details/78408919
