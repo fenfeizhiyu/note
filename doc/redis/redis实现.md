@@ -124,3 +124,34 @@
 
 
 ### 七 对象
+
+  redis没有直接用上面的数据结构实现键值对数据库，而是基于这些数据结构实现一个对象系统。字符串对象，列表对象，哈希对象，集合对象，有序集合对象。
+    - 可以根据不同的场景采用不同的数据结构。
+    - 在执行命令时，可以检查对象类型。
+    - 对象系统还实现了基于引用计数的内存回收机制，当程序不使用某个对象的时候，这个对象所占内存会被收回。
+    - 通过引用计数实现了对象共享机制，在不同数据库键之间共享。
+    - 对象里面带有访问时间记录信息，可以计算数据库键的空转时间，在设置了maxmemory的时候，空转时长大的会被删除。
+    - 对象由redisObject表示，里面有type字段记录对象类型，encoding记录编码，ptr泛型指针指向数据存放地址
+    - type命令查看对象类型，object encoding命令查看对象编码
+    - 编码表:
+
+| 编码常量 | 所对应的底层结构 |
+|---|---|
+| redis_encoding_int  | long类型的整数  |
+|redis_encoding_embstr |embstr编码的简单SDS|
+| redis_encoding_raw|简单sds   |  
+|redis_encoding_ht   | 字典 |   
+|redis_encoding_linkedlist   |双端链表   |   
+|redis_encoding_ziplist   |压缩链表   |   
+|redis_encoding_intset   | 整数集合  |   
+|redis_encoding_skiplist   |跳跃表和字典   |   
+
+
+    1、字符串对象，有三种编码，对应3种实现，int,raw,embstr
+      - embstr 编码专门保存短字符串对象，这种类型的对象只需一次内存分配即可创建，其中数据长度固定为39字节。
+      - raw为保存比较长的字符串设计，需要单独为数据存储分配一次内存。
+      - long类型专门保存整数。
+      - Long类型的字符串，在修改为不是整数的字符串时会变为raw类型，embstr类型的字符串，在发生修改时会变为raw类型。
+    对于double类型的数据，redis会转换为字符串进行存储，在需要计算的时候，把字符串转换为数字。
+
+    2.

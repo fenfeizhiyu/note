@@ -35,6 +35,7 @@ public class BaseJedis {
     }
 
     public static void main(String[] args) {
+        System.out.println(BaseJedis.getJedis().set("A", "hello"));
 
     }
 
