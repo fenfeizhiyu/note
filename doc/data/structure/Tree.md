@@ -28,13 +28,3 @@ Tree
 * 所有节点的高度h都是相同的，即树是平衡的。
 * B树的高度满足如下公式h<=log_t((n+1)/2) ,搜索B树，访问节点的次数与高度成正比。
 2.B树的插入，删除
-
-
-
-
-
-
-#### url:
-    数据结构中各种树 http://blog.jobbole.com/111680/
-    很全面的算法和数据结构知识 http://blog.jobbole.com/110835/?utm_source=blog.jobbole.com&utm_medium=relatedPosts
-    B树 https://blog.csdn.net/guoziqing506/article/details/64122287

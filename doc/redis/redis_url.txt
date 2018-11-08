@@ -2,3 +2,6 @@
 
 2.Skip List（跳跃表）原理详解与实现 http://dsqiu.iteye.com/blog/1705530
   List（跳跃表）原理详解与实现 https://blog.csdn.net/lz710117239/article/details/78408919
+
+3.redisReactor模式  https://blog.csdn.net/liu136313/article/details/50520993
+  redis事件模型 :https://blog.csdn.net/u014590757/article/details/79860760
