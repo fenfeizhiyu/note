@@ -1,1 +1,11 @@
 机器学习 https://blog.csdn.net/dqcfkyqdxym3f8rb0/article/details/79017776
+leetCode题解：
+http://blog.csdn.net/column/details/leetcode-solution.html
+
+https://github.com/gzwl/leetcode
+
+https://www.zhihu.com/question/25574458
+
+https://www.zhihu.com/question/36488823
+
+http://www.cnblogs.com/grandyang/p/4606334.html

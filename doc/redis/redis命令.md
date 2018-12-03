@@ -185,4 +185,75 @@
     * 当列表 source 为空时， BRPOPLPUSH 命令将阻塞连接，直到等待超时，或有另一个客户端对 source 执行 LPUSH 或 RPUSH 命令为止。超时参数 timeout 接受一个以秒为单位的数字作为值。超时参设为 0 表示阻塞时间可以无限期延长(block indefinitely) 。
 
   5. LINDEX key index 返回列表 key 中，下标为 index 的元素。
+  6. LINSERT key BEFORE|AFTER pivot value
+  * 将值 value 插入到列表 key 当中，位于值 pivot 之前或之后。
+
+  7. LLEN key 返回列表 key 的长度。
+
+  8. LPOP key 移除并返回列表 key 的头元素。
+  9. LPUSH key value [value ...] 将一个或多个值 value 插入到列表 key 的表头
+  10. LPUSHX key value  
+
+  * 将值 value 插入到列表 key 的表头，当且仅当 key 存在并且是一个列表。
+  * 和 LPUSH 命令相反，当 key 不存在时， LPUSHX 命令什么也不做。
+
+  11. LRANGE key start stop 返回列表 key 中指定区间内的元素，区间以偏移量 start 和 stop 指定。
+  12. LREM key count value 根据参数 count 的值，移除列表中与参数 value 相等的元素。
+
+  * count > 0 : 从表头开始向表尾搜索，移除与 value 相等的元素，数量为 count 。
+  * count < 0 : 从表尾开始向表头搜索，移除与 value 相等的元素，数量为 count 的绝对值。
+  * count = 0 : 移除表中所有与 value 相等的值。
+
+  13. LSET key index value 将列表 key 下标为 index 的元素的值设置为 value 。
+  14. LTRIM key start stop
+
+  * 对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除。
+  * 执行命令 LTRIM list 0 2 ，表示只保留列表 list 的前三个元素，其余元素全部删除。
+
+  15. RPOP key  移除并返回列表 key 的尾元素。
+
+  16. RPOPLPUSH source destination
+
+    * 将列表 source 中的最后一个元素(尾元素)弹出，并返回给客户端。
+    * 将 source 弹出的元素插入到列表 destination ，作为 destination 列表的的头元素。
+    * 如果 source 不存在，值 nil 被返回，并且不执行其他动作。
+    * 有两个列表 source 和 destination ， source 列表有元素 a, b, c ， destination 列表有元素 x, y, z ，执行 RPOPLPUSH source destination 之后， source 列表包含元素 a, b ， destination 列表包含元素 c, x, y, z ，并且元素 c 会被返回给客户端。
+
+  17. RPUSH key value [value ...] 将一个或多个值 value 插入到列表 key 的表尾(最右边)
+    * 如果 key 不存在，一个空列表会被创建并执行 RPUSH 操作。
+
+  18. RPUSHX key value 将值 value 插入到列表 key 的表尾，当且仅当 key 存在并且是一个列表。
+
+
+### 六 集合
+
+  1. SADD key member [member ...] 将一个或多个 member 元素加入到集合 key 当中，已经存在于集合的 member 元素将被忽略。
+  2. SCARD key 返回集合 key 的基数(集合中元素的数量)。
+  3. SDIFF key [key ...] 返回一个集合的全部成员，该集合是所有给定集合之间的差集。
+  4. SDIFFSTORE destination key [key ...]
+  * 这个命令的作用和 SDIFF 类似，但它将结果保存到 destination 集合，而不是简单地返回结果集。
+  * 如果 destination 集合已经存在，则将其覆盖。
+  5. SISMEMBER key member 判断 member 元素是否集合 key 的成员。
+  6. SMEMBERS key 返回集合 key 中的所有成员。
+  7. SMOVE source destination member 将 member 元素从 source 集合移动到 destination 集合。
+  8. SPOP key 移除并返回集合中的一个随机元素。
+  9. SRANDMEMBER key [count] 那么返回集合中的一个随机元素。
+    * 如果 count 为负数，那么命令返回一个数组，数组中的元素可能会重复出现多次，而数组的长度为 count 的绝对值。
+    * 如果 count 为正数，且小于集合基数，那么命令返回一个包含 count 个元素的数组，数组中的元素各不相同。如果 count 大于等于集合基数，那么返回整个集合
+
+  10. SREM key member [member ...] 移除集合 key 中的一个或多个 member 元素，不存在的 member 元素会被忽略。
+
+  11. SUNION key [key ...] 返回一个集合的全部成员，该集合是所有给定集合的并集。
+
+  12. SUNIONSTORE destination key [key ...] 这个命令类似于 SUNION 命令，但它将结果保存到 destination 集合，而不是简单地返回结果集。
+
+
+### 七 有序集合
+
+  1. ZADD key score member [[score member] [score member] ...] 将一个或多个 member 元素及其 score 值加入到有序集 key 当中。
+
+  2. ZCARD key 返回有序集 key 的基数。
+  3. ZCOUNT key min max 返回有序集 key 中， score 值在 min 和 max 之间(默认包括 score 值等于 min 或 max )的成员的数量。
+  4. ZINCRBY key increment member 为有序集 key 的成员 member 的 score 值加上增量 increment 。
+  5. ZRANGE key start stop [WITHSCORES] 返回有序集 key 中，指定区间内的成员。
   6.

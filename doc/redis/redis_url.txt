@@ -5,3 +5,5 @@
 
 3.redisReactor模式  https://blog.csdn.net/liu136313/article/details/50520993
   redis事件模型 :https://blog.csdn.net/u014590757/article/details/79860760
+
+4. redis博文 http://www.cnblogs.com/kismetv/p/8654978.html
