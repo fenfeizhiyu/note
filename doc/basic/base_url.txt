@@ -1,2 +1,6 @@
 ## this base url
 https://www.cnblogs.com/ysocean/p/6555373.html
+
+HashMap ： https://blog.csdn.net/wushiwude/article/details/76041751
+
+socket: https://www.cnblogs.com/zengzy/p/5107516.html
