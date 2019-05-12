@@ -1,1 +1,5 @@
 *.class
+.idea/inspectionProfiles/
+.idea/workspace.xml
+target/generated-sources/
+/.idea/libraries/
