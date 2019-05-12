@@ -7,10 +7,10 @@ import model.BinaryNode;
  * @Author yu.yang
  * @Date 2018/10/15 14:10
  */
-public class Tmain {
+public class TreeMain {
 
     public static void main(String[] args) {
-        testInsertNodeInTree();
+        testNodeHeiht();
     }
 
 
