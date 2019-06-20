@@ -7,9 +7,26 @@ public class Product {
 
     private Double price;
 
+    private Integer type;
+
     public Product(String name, Double price) {
         this.name = name;
         this.price = price;
+        this.type=1;
+    }
+
+    public Product(String name, Double price, Integer type) {
+        this.name = name;
+        this.price = price;
+        this.type = type;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public Product() {
