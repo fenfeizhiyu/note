@@ -6,11 +6,33 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CollectTestMain {
 
     public static void main(String[] args){
 
+        testMethod_2();
+    }
+
+
+    public static void testMethod_2() {
+        List<Integer> list = Stream.iterate(0, (Integer i) -> {
+            return i + 1;
+        }).limit(20).collect(Collectors.toList());
+        list.stream().forEach((Integer i)->{
+            System.out.println(i);
+        });
+        System.out.println("***********");
+        list.parallelStream().forEachOrdered((Integer i)->{
+            System.out.println(i);
+        });
+
+    }
+
+
+    public static void testMethod_1(){
         BiFunction<String,Double,Product> productBiFunction= Product::new;
 
         List<Product> list=new ArrayList<Product>();
