@@ -3,6 +3,7 @@ package main;
 import model.Product;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -13,7 +14,23 @@ public class CollectTestMain {
 
     public static void main(String[] args){
 
-        testMethod_2();
+        testMethod_3();
+    }
+
+    public static void testMethod_3(){
+        Stream<Integer> stream= Arrays.asList(1,2,3,4,5,6).stream();
+        List<Integer> numbers=stream.reduce(new ArrayList<Integer>(),(List<Integer> list_1,Integer e)->{
+            list_1.add(e);
+            System.out.println("****");
+            return list_1;
+        },(List<Integer> l1,List<Integer> l2)->{
+            l1.addAll(l2);
+            System.out.println("----");
+            return l1;
+        });
+        numbers.forEach((Integer i)->{
+            System.out.print(i+";");
+        });
     }
 
 
