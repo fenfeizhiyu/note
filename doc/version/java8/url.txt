@@ -1,3 +1,5 @@
 https://blog.csdn.net/tyrroo/article/details/81390202  Fork/Join框架基本使用
 
 https://blog.csdn.net/tyrroo/article/details/81483608 Fork/Join框架原理解析
+
+https://segmentfault.com/a/1190000016781127
