@@ -17,7 +17,7 @@ public class ForkJoinMain {
 
     public static void  testMethod(){
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        ForkJoinTask<Integer> taskFuture = forkJoinPool.submit(new MyForkJoinTask(1, 10001));
+        ForkJoinTask<Integer> taskFuture = forkJoinPool.submit(new MyForkJoinTask(1, 100));
         try {
             Integer result = taskFuture.get();
             System.out.println("result = " + result);
