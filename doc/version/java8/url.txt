@@ -10,3 +10,5 @@ https://segmentfault.com/a/1190000016781127
 
 https://blog.csdn.net/liudongdong0909/article/details/77429875 JAVA8新特性[第四季]-强大的Stream API
 
+https://www.cnblogs.com/faunjoe88/p/8023239.html  java類加載器
+

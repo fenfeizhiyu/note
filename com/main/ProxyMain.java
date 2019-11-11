@@ -20,8 +20,13 @@ public class ProxyMain {
         // jdk动态代理测试
         Subject subject = new JDKDynamicProxy(new RealSubject()).getProxy();
         Subject3 sub = new JDKDynamicProxy(new RealSubject2()).getProxy();
+        Subject2 sub3=new JDKDynamicProxy(new RealSubject2()).getProxy();
        // subject.doSomething();
         subject.doDrive();
         sub.jump();
+        sub3.sing();
+        sub3.attack();
+
+
     }
 }
