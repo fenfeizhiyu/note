@@ -18,6 +18,7 @@ public class BaseJedis {
     private static ResourceBundle bundle;
     static
     {
+
          bundle = ResourceBundle.getBundle("redis");
         if(config == null){
             config = new JedisPoolConfig();

@@ -1,0 +1,6 @@
+1.更改文件或者文件夹的所有者
+  chown fenfei:fenfei ./note  chown fenfei:fenfei -R ./note
+  更改用户组：
+  chown :fenfei ./note
+  更改文件权限  ：所有者，同组用户，其他用户
+   chmod -R 744 /mnt/fileA
